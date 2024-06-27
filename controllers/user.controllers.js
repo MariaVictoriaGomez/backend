@@ -20,9 +20,9 @@ export default class UserControllers {
         res.json(user)
     }
 
-    getUsersByName = async (req, res) => {
-         const { name } = req.query;
-        const result = await this.db.getUsersByName(name);
+    getUserByEmail = async (req, res) => {
+         const { email } = req.query;
+        const result = await this.db.getUserByEmail(email);
         res.json(result);
     }
 
