@@ -9,7 +9,7 @@ export default class Mysql {
             host: 'localhost',
             user: 'root',
             password: '1234',
-            database: 'galeriadeartistas'
+            database: 'tiendacafe'
         })
         this.tryConnection();
     }

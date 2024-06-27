@@ -1,33 +1,49 @@
-import express from 'express';
-import UsersRoutes from '../routes/users.routes.js';
-import ProductsRoutes from '../routes/products.routes.js';
+import UsersDaoMysql from '../dao/user.dao.mysql.js';
+import UsersHelpers from '../helpers/users.helper.js';
 
-export default class Server{
+export default class UserControllers {
 
-    static app = express();
-
-    static middlewares(){
-        Server.app.use(express.json())
-        Server.app.use(express.urlencoded({ extended: true }))
+    constructor() {
+        //     this.db = new UsersDaoMemory();
+        this.db = new UsersDaoMysql()
+        this.helpers = new UsersHelpers();
     }
 
-    static routes(){
-        const usersRoutes = new UsersRoutes();
-        const productsRoutes = new ProductsRoutes();
-        Server.app.use('/users', usersRoutes.router);
-        Server.app.use('/products', productsRoutes.router);
+    getUsers = async (req, res) => {
+        const users = await this.db.getUsers();
+        res.json(users);
     }
 
-    static runServer(port){
-        Server.app.listen(port, () => console.log(`listen at http://localhost:${port}`));
+    getUserById = async (req, res) => {
+        const { id } = req.params
+        const user = await this.db.getUserById(id)
+        res.json(user)
     }
 
-    static run(port){
-        console.clear();
-        Server.middlewares();
-        Server.routes();
-        Server.runServer(port);
+    getUsersByName = async (req, res) => {
+         const { name } = req.query;
+        const result = await this.db.getUsersByName(name);
+        res.json(result);
+    }
+
+    addUser = async (req, res) => {
+        const newUser = this.helpers.createUser(req.body);
+        const result = await this.db.addUser(newUser);
+        res.json(result);
+    }
+
+    modifyUser = async (req, res) => {
+        const modifiedUser = this.helpers.createUser(req.body)
+        const result = await this.db.modifyUser(modifiedUser)
+        res.json(result)
+    }
+
+    deleteUser = async (req, res) => {
+        const { id } = req.params
+        const result = await this.db.deleteUser(id)
+        res.json(result);
     }
 }
+
 
 
