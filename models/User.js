@@ -1,8 +1,9 @@
 export default class User{
-    constructor(id, username, password, usertype){
-        this.id = parseInt(id);
-        this.username = username;
-        this.password = password;
-        this.usertype = usertype;
+    constructor(idusuario, email, contrasenia, tipousuario, activo){
+        this.idusuario = parseInt(idusuario);
+        this.email = email;
+        this.contrasenia = contrasenia;
+        this.tipousuario = tipousuario;
+        this.activo = activo;
     }
     }

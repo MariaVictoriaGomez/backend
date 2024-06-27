@@ -1,9 +1,9 @@
 import Mysql from '../db/connections/Mysql.config.js';
 
-export default class UsersDaoMysql extends Mysql{
-    constructor(){
+export default class UsersDaoMysql extends Mysql {
+    constructor() {
         super()
-        this.table = 'user'
+        this.table = 'usuario'
     }
 
     // #createTable(){
@@ -16,46 +16,53 @@ export default class UsersDaoMysql extends Mysql{
     //     this.connection.query(query);
     // }
 
-    
-    async getUsers (){
+
+    async getUsers() {
         const query = `SELECT * FROM ${this.table}`
         const result = await this.connection.promise().query(query)
         console.log(result)
         return result[0]
     }
 
-    async getUserById(id){
-        const query = `SELECT * FROM ${this.table} WHERE id = ${id}`
+    async getUserById(idusuario) {
+        const query = `SELECT * FROM ${this.table} WHERE idusuario = ${idusuario}`
         const result = await this.connection.promise().query(query)
         console.log(result)
         return result[0]
     }
 
-    async getUsersByName(name) {
-        const query = `SELECT * FROM ${this.table} WHERE user like = '%${name}%'`
+    // async getUserByEmail(email) {
+    //     const query = `SELECT * FROM ${this.table} WHERE email LIKE ?`;
+    //     const result = await this.connection.promise().query(query, [`%${email}%`]);
+    //     console.log(result);
+    //     return result[0];
+    // }
+
+    async getUserByEmail(email) {
+        const query = `SELECT * FROM ${this.table} WHERE email LIKE '%${email}%'`
         const result = await this.connection.promise().query(query)
         console.log(result)
         return result[0]
     }
 
-    async addUser(newUser){
+    async addUser(nuevoUsuario) {
         // console.log(newUser)
-        const { id, username, password, usertype } = newUser
-        const query = `INSERT INTO ${this.table} VALUES (${id}, '${password}',  '${username}', ${usertype})`
-        const result = this.connection.promise().query(query)
+        const { email, contrasenia, tipousuario, activo } = nuevoUsuario
+        const query = `INSERT INTO ${this.table} (email, contrasenia, idtipousuario) VALUES ('${email}',  '${contrasenia}', ${tipousuario})`
+        const result = await this.connection.promise().query(query)
         console.log(result)
         return result[0]
     }
 
-    async modifyUser(data){
-        const { id, username, password, usertype } = data
-        const query = `UPDATE ${this.table} SET user = ?, password = ?, usertype_id = ? WHERE id = ${id}`
-        const [result] = await this.connection.promise().query(query, [username, password, usertype])
+    async modifyUser(data) {
+        const {idusuario, email, contrasenia, tipousuario, activo } = data
+        const query = `UPDATE ${this.table} SET email = ?, contrasenia = ?, idtipousuario = ?, activo = ? WHERE idusuario = ${idusuario}`
+        const [result] = await this.connection.promise().query(query, [email, contrasenia, tipousuario, activo])
         return result;
     }
 
-    async deleteUser(id){
-        const query = `DELETE FROM ${this.table} WHERE id = ${id}`
+    async deleteUser(idusuario) {
+        const query = `DELETE FROM ${this.table} WHERE idusuario = ${idusuario}`
         const [result] = await this.connection.promise().query(query);
         return result;
     }
