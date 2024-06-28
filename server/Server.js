@@ -8,7 +8,7 @@ export default class Server{
     static middlewares(){
         Server.app.use(express.json())
         Server.app.use(express.urlencoded({ extended: true }))
-        Server.app.use(this.middlewares.errors.errorController);
+    //    Server.app.use(this.middlewares.errors.errorController);
     }
 
     static routes(){
