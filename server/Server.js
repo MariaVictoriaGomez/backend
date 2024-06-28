@@ -5,15 +5,22 @@ export default class Server{
 
     static app = express();
 
+    static public(){
+        Server.app.use(express.static('public'))
+    }
+
     static middlewares(){
         Server.app.use(express.json())
         Server.app.use(express.urlencoded({ extended: true }))
-    //    Server.app.use(this.middlewares.errors.errorController);
     }
 
     static routes(){
         const usersRoutes = new UsersRoutes();
         Server.app.use('/users', usersRoutes.router);
+    }
+
+    static errors(){
+            //    Server.app.use(this.middlewares.errors.errorController);
     }
 
 
@@ -23,8 +30,10 @@ export default class Server{
 
     static run(port){
         console.clear();
+        Server.public();
         Server.middlewares();
         Server.routes();
+        Server.errors();
         Server.runServer(port);
     }
 }
