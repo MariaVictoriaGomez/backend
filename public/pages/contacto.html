@@ -76,24 +76,33 @@
         </div>
 
         <form action="#" method="post" onsubmit="return validarFormulario()">
-            <div class="section-inputs">
+            <div class="section-name">
                 <label for="name">
                     <span>Nombre y Apellido</span>
-                    <input id="name" name="name" placeholder="ej: María Perez">
+                    <input id="name" name="name" placeholder="ej: María Rosa Perez">
                 </label>
-
-                <label for="username">
-                    <span>Nombre de Usuario</span>
-                    <input id="username" name="username" placeholder="ej: Maria88">
-                </label>
-
             </div>
 
+            <div class="section-inputs">
+                <label for="userdni">
+                    <span>DNI</span>
+                    <input id="userdni" name="userdni" placeholder="ej: 12589425">
+                </label>
+           
+           
+                <label for="birthdate" class="label-country">
+                    <span>Fecha de Nacimiento</span>
+                    <input id="birthdate" name="birthdate" type="date">
+                </label>
 
-            <label for="email">
-                <span>Email</span>
-                <input id="email" name="email" placeholder="tunombre@email.com" type="email">
-            </label>
+         
+        </div>
+        <label for="email" >
+            <span>Email</span>
+            <input id="email" name="email" placeholder="tunombre@email.com" type="email">
+        </label>
+
+            <div class="section-inputs">
 
             <label for="country" class="label-country">
                 <span>País</span>
@@ -104,6 +113,17 @@
                     <option value="uruguay">Uruguay</option>
                 </select>
             </label>
+
+            <label for="province" class="label-country">
+                <span>Provincia</span>
+                <select id="province" name="province" class="select-country">
+                    <option value="cordoba">Córdoba</option>
+                    <option value="buenosaires">Buenos Aires</option>
+                    <option value="santafe">Santa Fé</option>
+                    <option value="neuquen">Neuquén</option>
+                </select>
+            </label>
+        </div>
 
             <label for="password">
                 <span>Contraseña</span>
@@ -125,6 +145,7 @@
 
         </form>
     </div>
+
 
 
     <div class="svg-arrow">
