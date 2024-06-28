@@ -8,12 +8,14 @@ export default class Server{
     static middlewares(){
         Server.app.use(express.json())
         Server.app.use(express.urlencoded({ extended: true }))
+        Server.app.use(this.middlewares.errors.errorController);
     }
 
     static routes(){
         const usersRoutes = new UsersRoutes();
         Server.app.use('/users', usersRoutes.router);
     }
+
 
     static runServer(port){
         Server.app.listen(port, () => console.log(`listen at http://localhost:${port}`));
