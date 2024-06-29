@@ -18,10 +18,12 @@ export default class UsersDaoMysql extends Mysql {
 
 
     async getUsers() {
-        const query = `SELECT * FROM ${this.table}`
-        const result = await this.connection.promise().query(query)
-        console.log(result)
-        return result[0]
+        try {
+            const query = `SELECT * FROM ${this.table}`
+            const [result] = await this.connection.promise().query(query)
+            console.log(result)
+            return result[0]
+        } catch (error) {return []}
     }
 
     async getUserById(idusuario) {
@@ -47,11 +49,16 @@ export default class UsersDaoMysql extends Mysql {
 
     async addUser(nuevoUsuario) {
         // console.log(newUser)
-        const { email, contrasenia, tipousuario, activo } = nuevoUsuario
-        const query = `INSERT INTO ${this.table} (email, contrasenia, idtipousuario) VALUES ('${email}',  '${contrasenia}', ${tipousuario})`
-        const result = await this.connection.promise().query(query)
-        console.log(result)
-        return result[0]
+        try {
+            const { email, contrasenia, tipousuario, activo } = nuevoUsuario
+            const query = `INSERT INTO ${this.table} (email, contrasenia, idtipousuario) VALUES ('${email}',  '${contrasenia}', ${tipousuario})`
+            const [result] = await this.connection.promise().query(query)
+            //console.log(result)
+            //return result[0]
+            return result.affectedRows > 0
+        } catch (error) {
+            return false
+        }
     }
 
     async modifyUser(data) {
@@ -66,4 +73,10 @@ export default class UsersDaoMysql extends Mysql {
         const [result] = await this.connection.promise().query(query);
         return result;
     }
+
+    incomplete = (req, res) => {
+        throw Error(4);
+    }
+
+
 }

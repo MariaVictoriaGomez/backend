@@ -5,7 +5,8 @@ export default class Mysql {
 
         // aca cambian sus credenciales segun corresponda
         
-        this.connection = mysql.createConnection({
+         this.connection = mysql.createConnection({
+        //this.connection = mysql.createPool({
             host: 'localhost',
             user: 'root',
             password: '1234',

@@ -1,7 +1,7 @@
+import Routes from './routes.js';
+import UserControllers from '../controllers/user.controllers.js';
 
-import Routes from "./routes.js";
-import UserControllers from "../controllers/user.controllers.js";
-// import { middlerares } from "../middlewares/routes.middlerares.js";
+ import { middlewares } from '../middlewares/routes.middlewares.js';
 
 
 export default class UsersRoutes extends Routes {
@@ -13,13 +13,17 @@ export default class UsersRoutes extends Routes {
 
     getRoutes() {
         this.router
-        // .use(middlerares.routes.checkRoute)
+            .use(middlewares.checkRoute)
             .get('/', this.controller.getUsers)
             .get('/user', this.controller.getUserByEmail)
-            .get('/:id', this.controller.getUserById)
+            .get('/:id',
+                middlewares.checkParams,
+                this.controller.getUserById)
             .post('/', this.controller.addUser)
             .put('/', this.controller.modifyUser)
-            .delete('/:id', this.controller.deleteUser)
+            .delete('/:id', 
+                middlewares.checkParams,
+                this.controller.deleteUser)
     }
 }
 

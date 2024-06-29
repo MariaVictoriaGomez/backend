@@ -29,7 +29,8 @@ export default class UserControllers {
     addUser = async (req, res) => {
         const newUser = this.helpers.createUser(req.body);
         const result = await this.db.addUser(newUser);
-        res.json(result);
+        result ? res.redirect('/') : res.redirect('/');
+//        res.json(result);
     }
 
     modifyUser = async (req, res) => {
