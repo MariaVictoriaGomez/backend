@@ -601,3 +601,26 @@ div.social-footer div {
         width: 90%;
     }
 }
+
+
+#formRegistrar{
+    width: max-content;
+    padding: 2em;
+    display: grid;
+    grid-template-columns: 20% 75%;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+}
+
+#formRegistrar label{
+    text-align: right;
+    padding: 10px;
+}
+
+#formRegistrar input, #formRegistrar select{
+    background-color: #DEE2E6;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    outline: none;
+}

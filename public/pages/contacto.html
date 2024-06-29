@@ -27,11 +27,11 @@
                 <li><a href="../pages/contacto.html" class="enlaces">CONTACTO</a></li>
             </ul>
 
-            <div id="menuToggle" onclick="toggleMenu()"> 
+            <div id="menuToggle" onclick="toggleMenu()">
                 <!-- Cambio el id a menuToggle -->
                 <span class="material-symbols-outlined" id="menuTrigger">menu</span>
-                     
-                    <ul id="menu">
+
+                <ul id="menu">
                     <li><a href="../pages/quienes-somos.html" class="enlaces">NOSOTROS</a></li>
                     <li><a href="../pages/productos.html" class="enlaces">PRODUCTOS</a></li>
                     <li><a href="../pages/servicios.html" class="enlaces">SERVICIOS</a></li>
@@ -76,69 +76,42 @@
             <hr>
         </div>
 
-        <form action="#" method="post" onsubmit="return validarFormulario()">
-            <div class="section-name">
-                <label for="name">
-                    <span>Nombre y Apellido</span>
-                    <input id="name" name="name" placeholder="ej: María Rosa Perez">
-                </label>
-                <label for="name">
-                    <span>Nombre y Apellido</span>
-                    <input id="name" name="name" placeholder="ej: María Rosa Perez">
-                </label>
-            </div>
+        <form action="./users" method="POST" onsubmit="return validarFormulario()" id="formRegistrar">
 
-            <div class="section-inputs">
-                <label for="userdni">
-                    <span>DNI</span>
-                    <input id="userdni" name="userdni" placeholder="ej: 12589425">
-                </label>
-           
-           
-                <label for="birthdate" class="label-country">
-                    <span>Fecha de Nacimiento</span>
-                    <input id="birthdate" name="birthdate" type="date">
-                </label>
+            <label for="name">Nombre: </label>
+            <input name="name" type="text" class="" id="name" placeholder="ej: María Rosa">
 
-         
-        </div>
-        <label for="email" >
-            <span>Email</span>
-            <input id="email" name="email" placeholder="tunombre@email.com" type="email">
-        </label>
+            <label for="lastname">Apellido: </label>
+            <input name="lastname" type="text" class="" id="lastname" placeholder="ej: Perez">
+            
 
-            <div class="section-inputs">
+            <label for="dni">DNI: </label>
+            <input name="dni" type="text" class="" id="dni" placeholder="ej: 20123456">
 
-            <label for="country" class="label-country">
-                <span>País</span>
-                <select id="country" name="country" class="select-country">
-                    <option value="argentina">Argentina</option>
-                    <option value="brasil">Brasil</option>
-                    <option value="chile">Chile</option>
-                    <option value="uruguay">Uruguay</option>
-                </select>
-            </label>
+            <label for="birthdate">Fecha Nac: </label>
+            <input name="birthdate" type="date" class="" id="birthdate">
 
-            <label for="province" class="label-country">
-                <span>Provincia</span>
-                <select id="province" name="province" class="select-country">
-                    <option value="cordoba">Córdoba</option>
-                    <option value="buenosaires">Buenos Aires</option>
-                    <option value="santafe">Santa Fé</option>
-                    <option value="neuquen">Neuquén</option>
-                </select>
-            </label>
-        </div>
+            <label for="email">Email: </label>
+            <input name="email" type="email" class="" id="email" placeholder="ej: tienda@tiendacafe.com">
 
-            <label for="password">
-                <span>Contraseña</span>
-                <input id="password" name="password" placeholder="6+ caracteres" type="password">
-            </label>
+            <label for="country" class="">País:</label>
+            <select id="country" name="country" class="">
+                <option value="argentina">Argentina</option>
+                <option value="brasil">Brasil</option>
+                <option value="chile">Chile</option>
+                <option value="uruguay">Uruguay</option>
+            </select>
 
-            <label for="validate-password">
-                <span>Confirmar Contraseña</span>
-                <input id="validate-password" name="validate-password" placeholder="6+ caracteres" type="password">
-            </label>
+            <label for="province">Provincia:</label>
+            <select id="province" name="province" class="">
+            </select>
+
+            <label for="password">Contraseña:</label>
+            <input id="password" name="password" placeholder="6+ caracteres" type="password">
+
+
+            <label for="validate-password"> Confirmar Contraseña:</label>
+            <input id="validate-password" name="validate-password" placeholder="6+ caracteres" type="password">
 
 
             <label for="checkbox" class="checkbox-label">
@@ -147,57 +120,130 @@
             </label>
 
             <button type="submit" class="submit-btn">Crear Cuenta</button>
-
         </form>
-    </div>
 
 
 
-    <div class="svg-arrow">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path fill="currentColor"
-                d="M11 16h2v-4.2l1.6 1.6L16 12l-4-4l-4 4l1.4 1.4l1.6-1.6zm1 6q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22" />
-        </svg>
-    </div>
+<!-- 
+            <form action="./users" method="POST" onsubmit="return validarFormulario()">
+                <div class="section-name">
+                    <span>
+                        <label for="name">Nombre y Apellido</label>
+                        <input id="name" name="name" placeholder="ej: María Rosa Perez">
+                    </span>
+                </div>
+
+                <div class="section-inputs">
+                    <label for="userdni">
+                        <span>DNI</span>
+                        <input id="userdni" name="userdni" placeholder="ej: 12589425">
+                    </label>
 
 
-    <footer>
-        <div class="container-footer">
-            <div class="social-footer">
-                <div>
+                    <label for="birthdate" class="label-country">
+                        <span>Fecha de Nacimiento</span>
+                        <input id="birthdate" name="birthdate" type="date">
+                    </label>
 
-                    <ul>
-                        <li><a href="www.facebook.com"><i class="fa-brands fa-facebook"></i></a></li>
-                        <li><a href="wwww.instagram.com"><i class="fa-brands fa-instagram"></i></a></li>
-                        <li><a href="www.youtube.com"><i class="fa-brands fa-youtube"></i></a></li>
-                        <li><a href="twitter.com"><i class="fa-brands fa-x-twitter"></i></a></li>
-                        <li><a href="www.linkedin.com"><i class="fa-brands fa-linkedin"></i></a></li>
-                        <li><a href="www-tiktok.com"><i class="fa-brands fa-tiktok"></i></a></li>
-                    </ul>
 
                 </div>
 
-            </div>
+                <label for="email">
+                    <span>Email</span>
+                    <input id="email" name="email" placeholder="tunombre@email.com" type="email">
+                </label>
 
-            <div class="copyright-footer">
-                <p>Copyright by Coffee Box © 2024 </p>
-            </div>
+                <div class="section-inputs">
 
-            <div class="legal-footer">
-                <ul>
-                    <li>Aspectos legales</li>
-                    <li>Política de privacidad</li>
-                    <li>Seguridad</li>
-                    <li>Administrar los cookies</li>
-                </ul>
-            </div>
+                    <label for="country" class="label-country">
+                        <span>País</span>
+                        <select id="country" name="country" class="select-country">
+                            <option value="argentina">Argentina</option>
+                            <option value="brasil">Brasil</option>
+                            <option value="chile">Chile</option>
+                            <option value="uruguay">Uruguay</option>
+                        </select>
+                    </label>
 
+                    <label for="province" class="label-country">
+                        <span>Provincia</span>
+                        <select id="province" name="province" class="select-country">
+                            <option value="cordoba">Córdoba</option>
+                            <option value="buenosaires">Buenos Aires</option>
+                            <option value="santafe">Santa Fé</option>
+                            <option value="neuquen">Neuquén</option>
+                        </select>
+                    </label>
+                </div>
+
+                <label for="password">
+                    <span>Contraseña</span>
+                    <input id="password" name="password" placeholder="6+ caracteres" type="password">
+                </label>
+
+                <label for="validate-password">
+                    <span>Confirmar Contraseña</span>
+                    <input id="validate-password" name="validate-password" placeholder="6+ caracteres" type="password">
+                </label>
+
+
+                <label for="checkbox" class="checkbox-label">
+                    <input type="checkbox" id="checkbox">
+                    <span>Acepto las condiciones y el aviso legal</span>
+                </label>
+
+                <button type="submit" class="submit-btn">Crear Cuenta</button>
+
+            </form>
+        </div> -->
+
+
+
+        <div class="svg-arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path fill="currentColor"
+                    d="M11 16h2v-4.2l1.6 1.6L16 12l-4-4l-4 4l1.4 1.4l1.6-1.6zm1 6q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22" />
+            </svg>
         </div>
-    </footer>
-    <script src="./assets/js/form.js"></script>
-    <script src="./assets/js/events.js"></script>
-    <script src="./assets/js/dom.js"></script>
-    <script src="../main.js"></script>
+
+
+        <footer>
+            <div class="container-footer">
+                <div class="social-footer">
+                    <div>
+
+                        <ul>
+                            <li><a href="www.facebook.com"><i class="fa-brands fa-facebook"></i></a></li>
+                            <li><a href="wwww.instagram.com"><i class="fa-brands fa-instagram"></i></a></li>
+                            <li><a href="www.youtube.com"><i class="fa-brands fa-youtube"></i></a></li>
+                            <li><a href="twitter.com"><i class="fa-brands fa-x-twitter"></i></a></li>
+                            <li><a href="www.linkedin.com"><i class="fa-brands fa-linkedin"></i></a></li>
+                            <li><a href="www-tiktok.com"><i class="fa-brands fa-tiktok"></i></a></li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+                <div class="copyright-footer">
+                    <p>Copyright by Coffee Box © 2024 </p>
+                </div>
+
+                <div class="legal-footer">
+                    <ul>
+                        <li>Aspectos legales</li>
+                        <li>Política de privacidad</li>
+                        <li>Seguridad</li>
+                        <li>Administrar los cookies</li>
+                    </ul>
+                </div>
+
+            </div>
+        </footer>
+        <script src="./assets/js/form.js"></script>
+        <script src="./assets/js/events.js"></script>
+        <script src="./assets/js/dom.js"></script>
+        <script src="../main.js"></script>
 </body>
 
 </html>
