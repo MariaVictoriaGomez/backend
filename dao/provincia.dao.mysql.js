@@ -34,7 +34,7 @@ export default class ProvinciasDaoMysql extends Mysql {
     
 
 
-    async addProvincia(nuevoProvincia) {
+    async addProvincia(nuevaProvincia) {
         // console.log(newUser)
         const { idprovincia, nombreprovincia, pais } = nuevaProvincia
         const query = `INSERT INTO ${this.table} ( idprovincia, nombreprovincia, pais) VALUES ('${idprovincia}',  '${nombreprovincia}', ${pais})`
