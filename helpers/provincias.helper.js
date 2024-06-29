@@ -1,6 +1,6 @@
-import Provincia from '../models/Provincias.js';
+import Provincia from '../models/Provincia.js';
 
-export default class ProvinciassHelpers{
+export default class ProvinciasHelpers{
 
     createProvincia(newData){
         const { idprovincia, nombreprovincia, pais } = newData;

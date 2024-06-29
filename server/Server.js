@@ -20,7 +20,7 @@ export default class Server {
         const provinciasRoutes = new ProvinciasRoutes();
         //duplicas pais
         Server.app.use('/users', usersRoutes.router);
-       Server.app.use('/provincias' , provinciasRoutes.router);
+        Server.app.use('/provincias', provinciasRoutes.router);
         //duplicar pais.
     }
 
