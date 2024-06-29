@@ -1,5 +1,6 @@
 import express from 'express';
 import UsersRoutes from '../routes/users.routes.js';
+import ProvinciasRoutes from '../routes/provincias.routes.js'
 import { errorController } from '../middlewares/errors.middlewares.js';
 
 export default class Server {
@@ -16,7 +17,11 @@ export default class Server {
 
     static routes() {
         const usersRoutes = new UsersRoutes();
+        const provinciasRoutes = new ProvinciasRoutes();
+        //duplicas pais
         Server.app.use('/users', usersRoutes.router);
+       Server.app.use('/provincias' , provinciasRoutes.router);
+        //duplicar pais.
     }
 
     static errors() {
