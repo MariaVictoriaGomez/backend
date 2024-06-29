@@ -1,5 +1,5 @@
 import UsersDaoMysql from '../dao/user.dao.mysql.js';
-import UsersHelpers from '../helpers/users.helper.js';
+import UsersHelpers from '../helpers/helpers/users.helper.js';
 
 export default class UserControllers {
 
@@ -29,14 +29,15 @@ export default class UserControllers {
     addUser = async (req, res) => {
         const newUser = this.helpers.createUser(req.body);
         const result = await this.db.addUser(newUser);
-        result ? res.redirect('/') : res.redirect('/');
-//        res.json(result);
+     result ? res.redirect('/') : res.redirect('/');
+    // res.json(result);
     }
 
     modifyUser = async (req, res) => {
         const modifiedUser = this.helpers.createUser(req.body)
         const result = await this.db.modifyUser(modifiedUser)
-        res.json(result)
+        //res.json(result)
+        result.message === '0' ? res.json(messages.upd) : next(result)
     }
 
     deleteUser = async (req, res) => {

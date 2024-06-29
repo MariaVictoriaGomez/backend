@@ -1,5 +1,5 @@
 import ProvinciasDaoMysql from '../dao/provincia.dao.mysql.js';
-import ProvinciasHelpers from '../helpers/provincias.helper.js';
+import ProvinciasHelpers from '../helpers/helpers/provincias.helper.js';
 
 export default class ProvinciaControllers {
 

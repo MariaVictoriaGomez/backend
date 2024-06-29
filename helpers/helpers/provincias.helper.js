@@ -1,4 +1,4 @@
-import Provincia from '../models/Provincia.js';
+import Provincia from '../../models/Provincia.js';
 
 export default class ProvinciasHelpers{
 

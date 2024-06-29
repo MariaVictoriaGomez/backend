@@ -22,8 +22,8 @@ export default class UsersDaoMysql extends Mysql {
             const query = `SELECT * FROM ${this.table}`
             const [result] = await this.connection.promise().query(query)
             console.log(result)
-            return result[0]
-        } catch (error) {return []}
+            return result
+        } catch (error) { return [] }
     }
 
     async getUserById(idusuario) {
@@ -50,11 +50,11 @@ export default class UsersDaoMysql extends Mysql {
     async addUser(nuevoUsuario) {
         // console.log(newUser)
         try {
-            const { email, contrasenia, tipousuario, activo } = nuevoUsuario
-            const query = `INSERT INTO ${this.table} (email, contrasenia, idtipousuario) VALUES ('${email}',  '${contrasenia}', ${tipousuario})`
+            const {idusuario, email, contrasenia, tipousuario, activo } = nuevoUsuario
+            const query = `INSERT INTO ${this.table} (email, contrasenia, idtipousuario, activo) VALUES ('${email}',  '${contrasenia}', ${tipousuario}, ${activo})`
             const [result] = await this.connection.promise().query(query)
-            //console.log(result)
-            //return result[0]
+            console.log(result)
+            // return result[0]
             return result.affectedRows > 0
         } catch (error) {
             return false
@@ -62,16 +62,24 @@ export default class UsersDaoMysql extends Mysql {
     }
 
     async modifyUser(data) {
-        const {idusuario, email, contrasenia, tipousuario, activo } = data
-        const query = `UPDATE ${this.table} SET email = ?, contrasenia = ?, idtipousuario = ?, activo = ? WHERE idusuario = ${idusuario}`
-        const [result] = await this.connection.promise().query(query, [email, contrasenia, tipousuario, activo])
-        return result;
+        try {
+            const { idusuario, email, contrasenia, tipousuario, activo } = data
+            const query = `UPDATE ${this.table} SET email = ?, contrasenia = ?, idtipousuario = ?, activo = ? WHERE idusuario = ${idusuario}`
+            const [result] = await this.connection.promise().query(query, [email, contrasenia, tipousuario, activo])
+            return result.affectedRows > 0 ? Error(0) : Error(3)
+        } catch (error) {
+            return Error(10);
+        }
     }
 
     async deleteUser(idusuario) {
+        try{
         const query = `DELETE FROM ${this.table} WHERE idusuario = ${idusuario}`
         const [result] = await this.connection.promise().query(query);
-        return result;
+        return result.affectedRows > 0 ? Error(0) : Error
+        } catch(error){
+            return Error(10);
+        }
     }
 
     incomplete = (req, res) => {
