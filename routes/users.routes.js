@@ -1,7 +1,7 @@
 
 import Routes from "./routes.js";
 import UserControllers from "../controllers/user.controllers.js";
-import { middlerares } from "../middlewares/routes.middlerares.js";
+// import { middlerares } from "../middlewares/routes.middlerares.js";
 
 
 export default class UsersRoutes extends Routes {
@@ -13,7 +13,7 @@ export default class UsersRoutes extends Routes {
 
     getRoutes() {
         this.router
-        .use(middlerares.routes.checkRoute)
+        // .use(middlerares.routes.checkRoute)
             .get('/', this.controller.getUsers)
             .get('/user', this.controller.getUserByEmail)
             .get('/:id', this.controller.getUserById)

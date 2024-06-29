@@ -8,7 +8,7 @@ export default class Mysql {
         this.connection = mysql.createConnection({
             host: 'localhost',
             user: 'root',
-            password: '1234',
+            password: '',
             database: 'tiendacafe'
             // host: process.env.HOST_DB,
             // user: process.env.USER_DB,
