@@ -216,9 +216,11 @@ header {
 
 .login {
     display: flex;
+    text-wrap: nowrap;
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
+    text-align: center;
 }
 
 .login h3 {
@@ -555,6 +557,126 @@ div.social-footer div {
 }
 
 
+
+#formRegistrar{
+    width: max-content;
+    padding: 2em;
+    display: grid;
+    grid-template-columns: min-content min-content min-content min-content;
+    grid-template-areas: "l-nombre i-nombre l-apellido i-apellido"
+    "l-dni i-dni l-fecha i-fecha"
+    "l-email i-email i-email i-email"
+    "l-pais i-pais l-prov i-prov"
+    "l-cont i-cont l-rcont i-rcont"
+    "aceptar aceptar aceptar aceptar"
+    "enviar enviar enviar enviar";
+    border: 1px solid #ccc;
+    border-radius: 15px;
+}
+
+#formRegistrar label{
+    text-align: right;
+    padding: 10px;
+}
+
+
+label[for=name]{
+    grid-area: l-nombre;
+}
+
+label[for=lastname]{
+    grid-area: l-apellido;
+}
+
+label[for=dni]{
+    grid-area: l-dni;
+}
+
+label[for=birthdate]{
+    grid-area: l-fecha;
+}
+
+label[for=email]{
+    grid-area: l-email;
+}
+
+
+label[for=country]{
+    grid-area: l-pais;
+}
+
+
+label[for=province]{
+    grid-area: l-prov;
+}
+
+label[for=password]{
+    grid-area: l-cont;
+}
+
+label[for=validate-password]{
+    grid-area: l-rcont;
+}
+
+label[for=checkbox]{
+    grid-area: aceptar;
+}
+
+.submit-btn{
+    grid-area: enviar;
+}
+
+
+input#name{
+    grid-area: i-nombre;
+}
+
+input#lastname{
+    grid-area: i-apellido;
+}
+
+input#dni{
+    grid-area: i-dni;
+}
+
+input#birthdate{
+    grid-area: i-fecha;
+}
+
+input#email{
+    grid-area: i-email;
+}
+
+
+input#country{
+    grid-area: i-pais;
+}
+
+input#province{
+    grid-area: i-prov;
+}
+
+input#password{
+    grid-area: i-cont;
+}
+
+input#validate-password{
+    grid-area: i-rcont;
+}
+
+
+
+#formRegistrar input, #formRegistrar select{
+    background-color: #DEE2E6;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    outline: none;
+} 
+
+
+
+
 @media only screen and (max-width:768px) {
 
     .title-text {
@@ -572,6 +694,7 @@ div.social-footer div {
     }
 
     .login p {
+        text-align: center;
         margin-top: 1rem;
         font-size: 1rem;
     }
@@ -604,14 +727,13 @@ div.social-footer div {
     .submit-btn {
         width: 90%;
     }
-}
 
-
+    
 #formRegistrar{
     width: max-content;
     padding: 2em;
     display: grid;
-    grid-template-columns: 20% 75%;
+    grid-template-columns: 80%;
     border: 1px solid #ccc;
     border-radius: 15px;
 }
@@ -628,3 +750,8 @@ div.social-footer div {
     border-radius: 10px;
     outline: none;
 }
+
+}
+
+
+
