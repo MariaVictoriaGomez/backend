@@ -3,14 +3,20 @@ function validarFormulario() {
     var email = document.getElementById('email').value;
     var password = document.getElementById('password').value;
     var validatePassword = document.getElementById('validate-password').value;
-    var userdni = document.getElementById('userdni').value;
+    var userdni = document.getElementById('dni').value;
     var checkbox = document.getElementById('checkbox');
     var birthdate = document.getElementById('birthdate').value;
+    var lastname = document.getElementById('lastname').value;
 
 
 
     if (nombre.trim() === '') {
         alert('Por favor, ingresa tu nombre.');
+        return false;
+    }
+
+    if (lastname.trim() === '') {
+        alert('Por favor, ingresa tu apellido.')
         return false;
     }
 
