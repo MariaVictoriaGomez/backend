@@ -75,17 +75,17 @@ else if (password.length < 6) {
         alert('Tenés que aceptar los términos y condiciones legales.');
         return false;
     }
-    document.body.innerHTML = `<div class="body-style"> <div class="card-container">
-    <div class="card">
-        <h2>¡Gracias por completar el formulario!</h2>
-        <p>Nos pondremos en contacto.</p>
-        </div>
-    </div>
-    <div class="directory">
-    <a href="../index.html">Inicio </a>  
-    <p>/FORMULARIO</p>
-</div>
-    </div>`; 
+//     document.body.innerHTML = `<div class="body-style"> <div class="card-container">
+//     <div class="card">
+//         <h2>¡Gracias por completar el formulario!</h2>
+//         <p>Nos pondremos en contacto.</p>
+//         </div>
+//     </div>
+//     <div class="directory">
+//     <a href="../index.html">Inicio </a>  
+//     <p>/FORMULARIO</p>
+// </div>
+//     </div>`; 
 
     return false; 
 }
