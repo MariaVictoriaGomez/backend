@@ -11,10 +11,9 @@ export default class User{
         this.nombre = nombre;
         this.apellido = apellido;
         this.dni = dni;
-        this.fecha_nac = fecha_nac;
+        this.fecha_nac = Date(toString(fecha_nac));
         this.idprovincia = parseInt(idprovincia);
     }
     }
 
 
-    

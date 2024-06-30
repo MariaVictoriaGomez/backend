@@ -12,7 +12,7 @@
     <script src="https://kit.fontawesome.com/c21e2c2f2d.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body onload="cargarProvincias();">
 
     <header id="header">
         <nav>
@@ -76,38 +76,35 @@
             <hr>
         </div>
 
-        <form action="./users" method="POST" onsubmit="return validarFormulario()" id="formRegistrar">
+        <form action="/users" method="POST"  id="formRegistrar" onsubmit="return validarFormulario()" >
 
-            <label for="name">Nombre: </label>
-            <input name="name" type="text" class="" id="name" placeholder="ej: María Rosa">
+            <label for="nombre">Nombre: </label>
+            <input name="nombre" type="text" class="" id="name" placeholder="ej: María Rosa">
 
-            <label for="lastname">Apellido: </label>
-            <input name="lastname" type="text" class="" id="lastname" placeholder="ej: Perez">
+            <label for="apellido">Apellido: </label>
+            <input name="apellido" type="text" class="" id="lastname" placeholder="ej: Perez">
             
 
             <label for="dni">DNI: </label>
             <input name="dni" type="text" class="" id="dni" placeholder="ej: 20123456">
 
-            <label for="birthdate">Fecha Nac: </label>
-            <input name="birthdate" type="date" class="" id="birthdate">
+            <label for="fecha_nac">Fecha Nac: </label>
+            <input name="fecha_nac" type="date" class="" id="birthdate">
 
             <label for="email">Email: </label>
             <input name="email" type="email" class="" id="email" placeholder="ej: tienda@tiendacafe.com">
 
-            <label for="country" class="">País:</label>
-            <select id="country" name="country" class="">
+            <label for="pais" class="">País:</label>
+            <select id="pais" name="pais" class="">
                 <option value="argentina">Argentina</option>
-                <option value="brasil">Brasil</option>
-                <option value="chile">Chile</option>
-                <option value="uruguay">Uruguay</option>
             </select>
 
-            <label for="province">Provincia:</label>
-            <select id="province" name="province" class="">
+            <label for="provincia">Provincia:</label>
+            <select id="provincia" name="provincia" class="">
             </select>
 
-            <label for="password">Contraseña:</label>
-            <input id="password" name="password" placeholder="6+ caracteres" type="password">
+            <label for="contrasenia">Contraseña:</label>
+            <input id="contrasenia" name="contrasenia" placeholder="6+ caracteres" type="password">
 
 
             <label for="validate-password"> Confirmar Contraseña:</label>
@@ -245,6 +242,9 @@
         <script src="./assets/js/events.js"></script>
         <script src="./assets/js/dom.js"></script>
         <script src="../main.js"></script>
+        <script src="./assets/js/provincias.js"></script>
 </body>
 
 </html>
+
+
