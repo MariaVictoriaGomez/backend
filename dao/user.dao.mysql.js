@@ -38,7 +38,7 @@ export default class UsersDaoMysql extends Mysql {
     }
 
     async addUser(newUser) {
-        const { email, contrasenia, tipousuario, activo, nombre, apellido, dni, fecha_nac, idprovincia } = newUser;
+        const { email, contrasenia, tipousuario, activo, nombre, apellido, dni, fecha_nac, provincia } = newUser;
         const connection = await this.connection.promise();
         try {
             await connection.beginTransaction();
@@ -47,7 +47,7 @@ export default class UsersDaoMysql extends Mysql {
             await connection.query(userQuery, [email, contrasenia, tipousuario, activo]);
 
             const personQuery = `INSERT INTO ${this.personTable} (email, nombre, apellido, dni, fecha_nac, idprovincia, activo) VALUES (?, ?, ?, ?, ?, ?, ?)`;
-            await connection.query(personQuery, [email, nombre, apellido, dni, fecha_nac, idprovincia, activo]);
+            await connection.query(personQuery, [email, nombre, apellido, dni, fecha_nac, provincia, activo]);
 
             await connection.commit();
             return true;
@@ -59,7 +59,7 @@ export default class UsersDaoMysql extends Mysql {
     }
 
     async modifyUser(modifiedUser) {
-        const { idusuario, email, contrasenia, tipousuario, activo, nombre, apellido, dni, fecha_nac, idprovincia } = modifiedUser;
+        const { idusuario, email, contrasenia, tipousuario, activo, nombre, apellido, dni, fecha_nac, provincia } = modifiedUser;
         const connection = await this.connection.promise();
     
         try {
@@ -71,7 +71,7 @@ export default class UsersDaoMysql extends Mysql {
                 SET email = ?, nombre = ?, apellido = ?, dni = ?, fecha_nac = ?, idprovincia = ?, activo = ? 
                 WHERE email = (SELECT email FROM ${this.userTable} WHERE idusuario = ?)
             `;
-            await connection.query(personQuery, [email, nombre, apellido, dni, fecha_nac, idprovincia, activo, idusuario]);
+            await connection.query(personQuery, [email, nombre, apellido, dni, fecha_nac, provincia, activo, idusuario]);
     
             // 2. Actualizar la tabla usuario
             const userQuery = `

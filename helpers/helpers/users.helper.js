@@ -15,7 +15,7 @@ export default class UsersHelpers {
             data.apellido,
             data.dni,
             data.fecha_nac,
-            parseInt(data.idprovincia, 10)
+            parseInt(data.provincia, 10)
         );
     }
 }

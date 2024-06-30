@@ -2,14 +2,14 @@ const selectProvincia = document.getElementById('provincia');
 
     async function cargarProvincias() {
         try {
-            const response = await fetch('/provincias'); // Ruta donde obtienes las provincias
-            const provincias = await response.json(); // Convertir la respuesta a JSON
+            const response = await fetch('/provincias');
+            const provincias = await response.json();
             selectProvincia.innerHTML = '';
 
             provincias.forEach(provincia => {
                 const option = document.createElement('option');
-                option.value = provincia.idprovincia; // Valor del ID de la provincia
-                option.textContent = provincia.nombreprovincia; // Nombre de la provincia
+                option.value = provincia.idprovincia; 
+                option.textContent = provincia.nombreprovincia;
                 selectProvincia.appendChild(option);
             });
         } catch (error) {

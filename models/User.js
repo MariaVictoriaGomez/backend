@@ -1,7 +1,7 @@
 // class user
 
 export default class User{
-    constructor(idusuario, email, contrasenia, tipousuario, activo, idpersona, nombre, apellido, dni, fecha_nac, idprovincia){
+    constructor(idusuario, email, contrasenia, tipousuario, activo, idpersona, nombre, apellido, dni, fecha_nac, provincia){
         this.idusuario = parseInt(idusuario);
         this.email = email;
         this.contrasenia = contrasenia;
@@ -11,9 +11,11 @@ export default class User{
         this.nombre = nombre;
         this.apellido = apellido;
         this.dni = dni;
-        this.fecha_nac = Date(toString(fecha_nac));
-        this.idprovincia = parseInt(idprovincia);
+        this.fecha_nac = new Date(fecha_nac).toISOString().slice(0, 19).replace('T', ' ');
+        this.provincia = parseInt(provincia);
     }
     }
 
 
+
+    
