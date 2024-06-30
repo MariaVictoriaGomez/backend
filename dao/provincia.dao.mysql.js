@@ -5,18 +5,7 @@ export default class ProvinciasDaoMysql extends Mysql {
         super()
         this.table = 'provincia'
     }
-
-    // #createTable(){
-    //     const query = `CREATE TABLE IF NOT EXISTS ${this.table}(
-    //         id IT PRIMARY KEY,
-    //         name VARCHAR(100) NOT NULL,
-    //         age INT NOT NULL
-    //     )`
-
-    //     this.connection.query(query);
-    // }
-
-
+    
     async getProvincias() {
         const query = `SELECT * FROM ${this.table}`
         const result = await this.connection.promise().query(query)

@@ -89,7 +89,7 @@ function validarFormulario() {
 
     console.log("Estoy en el validador");
 
-    return false;
+    return true;
 }
 
 function validarEmail(email) {

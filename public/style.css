@@ -147,7 +147,20 @@ ul#menu li a {
     padding: 10rem;
     color: rgb(247, 241, 241);
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+}
+
+.container a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.container a:hover{
+    text-decoration: none;
+    color: #fff;
+    text-shadow: -1px -1px 5px rgba(255,255,255,0.96);
 }
 
 .content {
