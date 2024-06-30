@@ -1,12 +1,12 @@
 function validarFormulario() {
-    var nombre = document.getElementById('name').value;
+    var nombre = document.getElementById('nombre').value;
     var email = document.getElementById('email').value;
-    var password = document.getElementById('password').value;
-    var validatePassword = document.getElementById('validate-password').value;
+    var contrasenia = document.getElementById('contrasenia').value;
+    var validatecontrasenia = document.getElementById('validate-contrasenia').value;
     var userdni = document.getElementById('dni').value;
     var checkbox = document.getElementById('checkbox');
-    var birthdate = document.getElementById('birthdate').value;
-    var lastname = document.getElementById('lastname').value;
+    var fecha_nac = document.getElementById('fecha_nac').value;
+    var apellido = document.getElementById('apellido').value;
 
 
 
@@ -15,7 +15,7 @@ function validarFormulario() {
         return false;
     }
 
-    if (lastname.trim() === '') {
+    if (apellido.trim() === '') {
         alert('Por favor, ingresa tu apellido.')
         return false;
     }
@@ -30,7 +30,7 @@ function validarFormulario() {
         return false;
     }
 
-    else if (!/^\d+$/.test(userdni)) { 
+    else if (!/^\d+$/.test(userdni)) {
         alert('El DNI solo puede contener números.');
         return false;
     }
@@ -40,54 +40,56 @@ function validarFormulario() {
         alert('Por favor, ingresa tu correo electrónico.');
         return false;
 
-    } else if (!validarEmail(email)) { 
+    } else if (!validarEmail(email)) {
         alert('Por favor, ingresa un correo electrónico válido.');
         return false;
     }
 
-    if (birthdate.trim() === ''){
+    if (fecha_nac.trim() === '') {
         alert('Por favor, ingresá tu fecha de nacimiento.');
         return false;
     }
 
-    if (password.trim() === '') {
+    if (contrasenia.trim() === '') {
         alert('Por favor, ingresa tu contraseña.');
         return false;
     }
-else if (password.length < 6) {
-    alert('La contraseña tiene que tener al menos 6 caracteres.');
-    return false;
-}
+    else if (contrasenia.length < 6) {
+        alert('La contraseña tiene que tener al menos 6 caracteres.');
+        return false;
+    }
 
 
-    if (validatePassword.trim() === '') { 
+    if (validatecontrasenia.trim() === '') {
         alert('Por favor, confirmá tu contraseña.');
         return false;
     }
 
-    if (password !== validatePassword) {
+    if (contrasenia !== validatecontrasenia) {
         alert('Las contraseñas no coinciden.');
         return false;
-     
+
     }
 
     if (!checkbox.checked) {
         alert('Tenés que aceptar los términos y condiciones legales.');
         return false;
     }
-//     document.body.innerHTML = `<div class="body-style"> <div class="card-container">
-//     <div class="card">
-//         <h2>¡Gracias por completar el formulario!</h2>
-//         <p>Nos pondremos en contacto.</p>
-//         </div>
-//     </div>
-//     <div class="directory">
-//     <a href="../index.html">Inicio </a>  
-//     <p>/FORMULARIO</p>
-// </div>
-//     </div>`; 
+    //     document.body.innerHTML = `<div class="body-style"> <div class="card-container">
+    //     <div class="card">
+    //         <h2>¡Gracias por completar el formulario!</h2>
+    //         <p>Nos pondremos en contacto.</p>
+    //         </div>
+    //     </div>
+    //     <div class="directory">
+    //     <a href="../index.html">Inicio </a>  
+    //     <p>/FORMULARIO</p>
+    // </div>
+    //     </div>`; 
 
-    return false; 
+    console.log("Estoy en el validador");
+
+    return false;
 }
 
 function validarEmail(email) {
