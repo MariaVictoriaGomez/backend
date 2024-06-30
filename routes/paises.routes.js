@@ -14,7 +14,7 @@ export default class PaisesRoutes extends Routes {
     getRoutes() {
         this.router
         // .use(middlerares.routes.checkRoute)
-            .get('/', this.controller.getPais)            
+            .get('/', this.controller.getPaises)            
             .get('/:id', this.controller.getPaisById)
             .post('/', this.controller.addPais)
             .put('/', this.controller.modifyPais)

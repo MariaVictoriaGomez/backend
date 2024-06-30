@@ -1,13 +1,21 @@
-import User from '../../models/User.js';
+// users.helper.js
 
-export default class UsersHelpers{
+import User from '../../models/User.js'
 
-    createUser(newData){
-        const { idusuario, email, contrasenia, tipousuario, activo } = newData;
-        const user = new User(idusuario, email, contrasenia, tipousuario, activo);
-        console.log(user);
-        return user;
+export default class UsersHelpers {
+    createUser(data) {
+        return new User(
+            parseInt(data.idusuario || 1),
+            data.email,
+            data.contrasenia,
+            parseInt(data.tipousuario, 10),
+            parseInt(data.activo, 10),
+            parseInt(data.idpersona || 1),
+            data.nombre,
+            data.apellido,
+            data.dni,
+            data.fecha_nac,
+            parseInt(data.idprovincia, 10)
+        );
     }
-
-
 }

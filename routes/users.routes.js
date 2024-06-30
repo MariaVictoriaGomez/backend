@@ -21,8 +21,7 @@ export default class UsersRoutes extends Routes {
                 this.controller.getUserById)
             .post('/', this.controller.addUser)
             .put('/', this.controller.modifyUser)
-            .delete('/:id', 
-                middlewares.checkParams,
+            .delete('/:id',
                 this.controller.deleteUser)
     }
 }

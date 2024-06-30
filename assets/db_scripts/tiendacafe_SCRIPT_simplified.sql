@@ -48,7 +48,6 @@ CREATE TABLE persona (
   activo tinyint(1) DEFAULT '1',
   PRIMARY KEY (idpersona,email),
   UNIQUE KEY dni_UNIQUE (dni),
-  UNIQUE KEY activo_UNIQUE (activo),
   KEY fk_emailusuario_idx (email),
   KEY fk_idprovincia_idx (idprovincia),
   CONSTRAINT fk_emailusuario FOREIGN KEY (email) REFERENCES usuario (email),
@@ -81,4 +80,7 @@ CREATE TABLE tipo_x_consulta (
   CONSTRAINT fk_idconsulta FOREIGN KEY (idconsulta) REFERENCES consulta (idconsulta),
   CONSTRAINT fk_idtipoconsulta FOREIGN KEY (idtipoconsulta) REFERENCES tipoconsulta (idtipoconsulta)
 );
+
+
+
 
