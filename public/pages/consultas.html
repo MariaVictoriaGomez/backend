@@ -12,7 +12,7 @@
     <script src="https://kit.fontawesome.com/c21e2c2f2d.js" crossorigin="anonymous"></script>
 </head>
 
-<body onload="cargarTiposConsulta()">
+<body>
 
     <header id="header">
         <nav>
@@ -60,34 +60,28 @@
     <div class="container">
         <div class="login">
             <h3>CONSULTAS</h3>
-           
+
             <p>Escucharte nos ayuda a mejorar.</p>
         </div>
 
-               <div class="separator">
+        <div class="separator">
             <hr>
             <span> O </span>
             <hr>
         </div>
 
-        <form action="/users" method="POST"  id="formRegistrar" onsubmit="return validarFormulario()" >
+        <form action="/users" method="POST" id="formRegistrar" onsubmit="return validarFormulario()">
+            <p>Tipo/s de consulta que deseas realizar:</p>
+            <div class="tipos-consulta">
 
-            <div class="tipoConsulta">
+            </div>
+            
+            <div class="mensaje">
+                <label for="detalles">Escribí tu mensaje:</label>
+                <textarea name="detalles" id="detalles"></textarea>
+            </div>
 
-            <legend>Tipo de consulta que deseas realizar:</legend>
-           
-
-            <label for="consulta">
-          <div class="tipos-consulta"></div>
-        </div>
-
-<div class="mensaje">
-            <label for="detalles">MENSAJE</label>
-            <textarea name="detalles" id="detalles" ></textarea>
-        </div>
-
-
-           
+            <input type="submit" value="Enviar">
         </form>
 
 
@@ -97,50 +91,48 @@
                     d="M11 16h2v-4.2l1.6 1.6L16 12l-4-4l-4 4l1.4 1.4l1.6-1.6zm1 6q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22" />
             </svg>
         </div>
-        </div>
+    </div>
 
 
-        <footer>
-            <div class="container-footer">
-                <div class="social-footer">
-                    <div>
+    <footer>
+        <div class="container-footer">
+            <div class="social-footer">
+                <div>
 
-                        <ul>
-                            <li><a href="www.facebook.com"><i class="fa-brands fa-facebook"></i></a></li>
-                            <li><a href="wwww.instagram.com"><i class="fa-brands fa-instagram"></i></a></li>
-                            <li><a href="www.youtube.com"><i class="fa-brands fa-youtube"></i></a></li>
-                            <li><a href="twitter.com"><i class="fa-brands fa-x-twitter"></i></a></li>
-                            <li><a href="www.linkedin.com"><i class="fa-brands fa-linkedin"></i></a></li>
-                            <li><a href="www-tiktok.com"><i class="fa-brands fa-tiktok"></i></a></li>
-                        </ul>
-
-                    </div>
-
-                </div>
-
-                <div class="copyright-footer">
-                    <p>Copyright by Coffee Box © 2024 </p>
-                </div>
-
-                <div class="legal-footer">
                     <ul>
-                        <li>Aspectos legales</li>
-                        <li>Política de privacidad</li>
-                        <li>Seguridad</li>
-                        <li>Administrar los cookies</li>
+                        <li><a href="www.facebook.com"><i class="fa-brands fa-facebook"></i></a></li>
+                        <li><a href="wwww.instagram.com"><i class="fa-brands fa-instagram"></i></a></li>
+                        <li><a href="www.youtube.com"><i class="fa-brands fa-youtube"></i></a></li>
+                        <li><a href="twitter.com"><i class="fa-brands fa-x-twitter"></i></a></li>
+                        <li><a href="www.linkedin.com"><i class="fa-brands fa-linkedin"></i></a></li>
+                        <li><a href="www-tiktok.com"><i class="fa-brands fa-tiktok"></i></a></li>
                     </ul>
+
                 </div>
 
             </div>
-        </footer>
-        <script src="./assets/js/form.js"></script>
-        <script src="./assets/js/events.js"></script>
-        <script src="./assets/js/dom.js"></script>
-        <script src="../main.js"></script>
-        <script src="./assets/js/provincias.js"></script>
-        <script src="./assets/js/tipoconsulta.js"></script>
+
+            <div class="copyright-footer">
+                <p>Copyright by Coffee Box © 2024 </p>
+            </div>
+
+            <div class="legal-footer">
+                <ul>
+                    <li>Aspectos legales</li>
+                    <li>Política de privacidad</li>
+                    <li>Seguridad</li>
+                    <li>Administrar los cookies</li>
+                </ul>
+            </div>
+
+        </div>
+    </footer>
+    <script src="./assets/js/form.js"></script>
+    <script src="./assets/js/events.js"></script>
+    <script src="./assets/js/dom.js"></script>
+    <script src="../main.js"></script>
+    <script src="./assets/js/provincias.js"></script>
+    <script src="./assets/js/tipoconsulta.js"></script>
 </body>
 
 </html>
-
-

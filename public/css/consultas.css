@@ -413,28 +413,19 @@ div.social-footer div {
     font-family: "Montserrat", sans-serif;
 }
 
-
-
-#formRegistrar{
-    width: 30%;
-    padding: 2em;
-    display: flex;
-    border: 1px solid #ccc;
+div.tipos-consulta{
     border-radius: 15px;
+    padding: 1em;
+    border: 2px solid #ccc;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto;
+    font-size: 10px;
+    text-transform: lowercase;
 }
 
-#formRegistrar label{
-    text-align: right;
-    padding: 10px;
+div.tipos-consulta label{
+    padding-right: 5px;
 }
-
-#formRegistrar input, #formRegistrar select{
-    background-color: #DEE2E6;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 10px;
-    outline: none;
-} 
 
 .mensaje{
     display: flex;
@@ -493,28 +484,6 @@ div.social-footer div {
     .submit-btn {
         width: 90%;
     }
-
-    
-#formRegistrar{
-    width: 40%;
-    padding: 2em;
-    display: flex;
-    border: 1px solid #ccc;
-    border-radius: 15px;
-}
-
-#formRegistrar label{
-    text-align: right;
-    padding: 10px;
-}
-
-#formRegistrar input, #formRegistrar select{
-    background-color: #DEE2E6;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 10px;
-    outline: none;
-}
 
 }
 
