@@ -171,6 +171,9 @@ ul#menu li a {
 
 .content {
     text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 .content h1 {
@@ -186,7 +189,7 @@ ul#menu li a {
     text-shadow: -1px -1px 1px #aaa, 0px 4px 1px rgba(37, 32, 32, 0.5), 4px 4px 5px rgba(0, 0, 0, 0.7), 0px 0px 7px rgba(0, 0, 0, 0.4);
 }
 
-.content a {
+.content a{
     font-size: 1em;
     padding: 1rem;
     background-color: #dcd7d7;
@@ -197,11 +200,11 @@ ul#menu li a {
     width: 10rem;
     color: #242424;
     text-decoration: none;
+    width: min-content;
 }
 
 .content a:hover {
     background-color: #ffffff;
-
 }
 
 /* ARROW */
