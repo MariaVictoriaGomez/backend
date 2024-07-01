@@ -1,6 +1,6 @@
 import Mysql from '../db/connections/Mysql.config.js';
 
-export default class ConsultsDaoMysql extends Mysql {
+export default class ConsultaDaoMysql extends Mysql {
     constructor() {
         super()
         this.table = 'consulta'
@@ -17,14 +17,14 @@ export default class ConsultsDaoMysql extends Mysql {
     // }
 
 
-    async getConsults() {
+    async getConsultas() {
         const query = `SELECT * FROM ${this.table}`
         const result = await this.connection.promise().query(query)
         console.log(result)
         return result[0]
     }
 
-    async getConsultsById(idconsulta) {
+    async getConsultasById(idconsulta) {
         const query = `SELECT * FROM ${this.table} WHERE idconsulta = ${idconsulta}`
         const result = await this.connection.promise().query(query)
         console.log(result)
@@ -39,9 +39,9 @@ export default class ConsultsDaoMysql extends Mysql {
     // }
 
 
-    async addConsult(nuevaConsulta) {
+    async addConsulta(nuevaConsulta) {
         // console.log(newUser)
-        const { idusuario, consulta, fecha } = nuevoUsuario
+        const { idconsulta, consulta, activo } = nuevoUsuario
         const query = `INSERT INTO ${this.table} (idusuario, consulta, fecha) VALUES ('${idusuario}',  '${consulta}', curdate())`
         const result = await this.connection.promise().query(query)
         console.log(result)
