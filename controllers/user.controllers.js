@@ -22,7 +22,8 @@ export default class UserControllers {
     getUserByEmail = async (req, res) => {
         const { email } = req.query;
         const result = await this.db.getUserByEmail(email);
-        res.json(result);
+        // res.json(result);
+        result ? res.redirect('/') : res.redirect('/');
     }
 
     addUser = async (req, res) => {
