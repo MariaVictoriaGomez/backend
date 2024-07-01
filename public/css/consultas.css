@@ -227,45 +227,13 @@ ul#menu li a {
     color: #8b8b8b;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 30px;
-}
-
-label {
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
-    align-items: flex-end;
-}
-
-label span {
-    font-weight: 700;
-    color: #C0AA83;
-}
-
-label input {
-  
-    background-color: #DEE2E6;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 10px;
-    outline: none;
-    font-size: 14pt;
-    transition: background-color 0.2s, border 0.2s, box-shadow 0, 2s;
-    color: #242424;
-    font-family: "Montserrat", sans-serif;
-}
-
 
  #detalles {
     width: 100%;
  
 }
 
-.submit-btn {
+.btnEnviarConsulta {
     background-color: #242424;
     color: white;
     text-align: center;
@@ -276,6 +244,7 @@ label input {
     border-radius: 10px;
     cursor: pointer;
     font-family: "Montserrat", sans-serif;
+    width: 100%;
 }
 
 .submit-btn:hover {
@@ -413,21 +382,22 @@ div.social-footer div {
     font-family: "Montserrat", sans-serif;
 }
 
-div.tipos-consulta{
+.tipos-consulta{
     border-radius: 15px;
     padding: 1em;
     border: 2px solid #ccc;
     display: grid;
-    grid-template-columns: auto auto auto auto auto auto auto auto;
+    grid-template-columns: auto auto auto auto;
     font-size: 10px;
     text-transform: lowercase;
 }
 
-div.tipos-consulta label{
-    padding-right: 5px;
+.tipos-consulta label{
+    padding: 5px;
 }
 
 .mensaje{
+    margin: 1em 0 1em 0;
     display: flex;
     flex-direction: column;
     gap: 5px;

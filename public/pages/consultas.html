@@ -70,18 +70,19 @@
             <hr>
         </div>
 
-        <form action="/users" method="POST" id="formRegistrar" onsubmit="return validarFormulario()">
-            <p>Tipo/s de consulta que deseas realizar:</p>
-            <div class="tipos-consulta">
+        <form action="/consulta" method="POST" id="formRegistrar" onsubmit="">
 
-            </div>
-            
+            <fieldset class="tipos-consulta" required>
+                <legend>Tipo/s de consulta que deseas realizar:</legend>
+              
+              </fieldset>
+
             <div class="mensaje">
-                <label for="detalles">Escribí tu mensaje:</label>
-                <textarea name="detalles" id="detalles"></textarea>
+                <label for="consulta">Escribí tu mensaje:</label>
+                <textarea name="consulta" id="consulta" required></textarea>
             </div>
 
-            <input type="submit" value="Enviar">
+            <input type="submit" value="Enviar" class="btnEnviarConsulta">
         </form>
 
 
