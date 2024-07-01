@@ -12,7 +12,7 @@
     <script src="https://kit.fontawesome.com/c21e2c2f2d.js" crossorigin="anonymous"></script>
 </head>
 
-<body onload="cargarProvincias();">
+<body onload="cargarTiposConsulta()">
 
     <header id="header">
         <nav>
@@ -74,13 +74,7 @@
            
 
             <label for="consulta">
-                <input type="radio" name="consulta" id="consulta" value="productos" required>
-                Productos
-                      
-           
-                <input type="radio" name="consulta" id="consulta" value="servicios" required>
-                Servicios
-            </label>
+          <div class="tipos-consulta"></div>
         </div>
 
 <div class="mensaje">
@@ -144,6 +138,7 @@
         <script src="./assets/js/dom.js"></script>
         <script src="../main.js"></script>
         <script src="./assets/js/provincias.js"></script>
+        <script src="./assets/js/tipoconsulta.js"></script>
 </body>
 
 </html>
