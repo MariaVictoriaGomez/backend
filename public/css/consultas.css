@@ -286,6 +286,10 @@ footer {
     justify-content: center;
 }
 
+.social-footer p {
+    padding: 1rem;
+}
+
 .social-footer ul {
     display: flex;
     justify-content: center;
@@ -303,6 +307,12 @@ footer {
 
 .social-footer i:hover {
     transform: translateY(-4%);
+}
+
+
+div.social-footer {
+    position: relative;
+    z-index: 1;
 }
 
 div.social-footer:before {
@@ -327,12 +337,6 @@ div.social-footer div {
     justify-content: center;
     padding: 1rem;
 }
-
-.legal-footer {
-    padding: .5rem;
-    font-size: .5rem;
-}
-
 
 .legal-footer {
     padding: .5rem;

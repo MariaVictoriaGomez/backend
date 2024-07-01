@@ -5,6 +5,7 @@
     padding: 2vw;
     font-family: "Montserrat", sans-serif;
     gap: 2px;
+    color: #fff;
 }
 
 .directory a {
@@ -101,4 +102,9 @@ body{
  .login-box a:hover{
      color:#fff;
  
+ }
+
+  form .registro{
+    text-decoration: underline;
+    color: #0a0a0a;
  }
