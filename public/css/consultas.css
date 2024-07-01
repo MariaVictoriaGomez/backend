@@ -436,7 +436,11 @@ div.social-footer div {
     outline: none;
 } 
 
-
+.mensaje{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
 
 
 @media only screen and (max-width:768px) {
