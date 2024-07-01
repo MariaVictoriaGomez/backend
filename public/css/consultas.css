@@ -195,8 +195,7 @@ ul#menu li a {
     align-items: center;
     justify-content: center;
     gap: 30px;
-    width: 450px;
-    color: #C0AA83;
+   color: #C0AA83;
 }
 
 .login {
@@ -239,6 +238,7 @@ label {
     display: flex;
     flex-direction: row;
     gap: 5px;
+    align-items: flex-end;
 }
 
 label span {
@@ -247,7 +247,7 @@ label span {
 }
 
 label input {
-    width: 90%;
+  
     background-color: #DEE2E6;
     border: none;
     padding: 10px 20px;
@@ -258,6 +258,7 @@ label input {
     color: #242424;
     font-family: "Montserrat", sans-serif;
 }
+
 
  #detalles {
     width: 100%;
@@ -415,7 +416,7 @@ div.social-footer div {
 
 
 #formRegistrar{
-    width: max-content;
+    width: 30%;
     padding: 2em;
     display: flex;
     border: 1px solid #ccc;
@@ -435,7 +436,11 @@ div.social-footer div {
     outline: none;
 } 
 
-
+.mensaje{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
 
 
 @media only screen and (max-width:768px) {
@@ -491,7 +496,7 @@ div.social-footer div {
 
     
 #formRegistrar{
-    width: max-content;
+    width: 40%;
     padding: 2em;
     display: flex;
     border: 1px solid #ccc;
