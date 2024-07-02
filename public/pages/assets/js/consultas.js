@@ -55,6 +55,34 @@ function cargarDom() {
 
 document.addEventListener('DOMContentLoaded', cargarDom());
 
+document.getElementById('formConsultar').addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData);
+
+    try {
+        const response = await fetch('/consultas', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+            alert('Tu consulta fue enviada!  - Nos comunicaremos con vos por email :)');
+            window.location.href = '/pages/consultas.html';
+        } else {
+            alert('Tu consulta no pudo ser enviada. Por favor intentalo nuevamente.');
+        }
+    } catch (error) {
+        console.error('Error al enviar el formulario:', error);
+        alert('Hubo un error al enviar el formulario.');
+    }
+});
 
 
 

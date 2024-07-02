@@ -27,19 +27,25 @@ export default class ConsultaControllers {
     
 
     addConsulta = async (req, res) => {
-        const { tiposConsulta, ...consultaData } = req.body;
-        const newConsulta = this.helpers.createConsulta(consultaData);
-        const result = await this.db.addConsulta(newConsulta);
-
-        if (Array.isArray(tiposConsulta)) {
-            console.log("tiposConsulta = " + tiposConsulta)
-            await Promise.all(tiposConsulta.map(async (idtipoconsulta) => {
-                await this.db.addTipoxConsulta(newConsulta.idconsulta, idtipoconsulta);
-            }));
+        try {
+            const { tiposConsulta, ...consultaData } = req.body;
+            const newConsulta = this.helpers.createConsulta(consultaData);
+            const result = await this.db.addConsulta(newConsulta);
+    
+            // if (Array.isArray(tiposConsulta)) {
+            //     console.log("tiposConsulta = " + tiposConsulta)
+            //     await Promise.all(tiposConsulta.map(async (idtipoconsulta) => {
+            //         await this.db.addTipoxConsulta(newConsulta.idconsulta, idtipoconsulta);
+            //     }));
+            // }
+    
+            res.json({ success: true });
+        } catch (error) {
+            console.error('Error al agregar consulta:', error);
+            res.json({ success: false });
         }
-
-        res.json(result);
     }
+    
 
     modifyConsulta = async (req, res) => {
         const modifiedConsulta = this.helpers.createConsulta(req.body)
