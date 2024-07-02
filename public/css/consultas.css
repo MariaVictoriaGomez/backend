@@ -469,4 +469,9 @@ div.social-footer div {
     outline: none;
     width: 100%;
     text-align: right;
+    display: none;
+}
+
+#consulta-id{
+    display: none;
 }
