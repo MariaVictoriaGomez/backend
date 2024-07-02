@@ -14,7 +14,8 @@ export default class ConsultasRoutes extends Routes {
     getRoutes() {
         this.router
         // .use(middlerares.routes.checkRoute)
-            .get('/', this.controller.getConsultas)            
+            .get('/', this.controller.getConsultas)  
+            .get('/next', this.controller.getNextConsultaId)          
             .get('/:id', this.controller.getConsultaById)
             .post('/', this.controller.addConsulta)
             .put('/', this.controller.modifyConsulta)

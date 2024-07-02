@@ -19,10 +19,25 @@ export default class ConsultaControllers {
         res.json(consulta)
     }
 
-  
+    getNextConsultaId = async (req, res) => {
+        const nextId = await this.db.getNextConsultaId();
+        console.log("Next Consulta ID: ", nextId); 
+        res.json(nextId);
+    }
+    
+
     addConsulta = async (req, res) => {
-        const newConsulta = this.helpers.createConsulta(req.body);
+        const { tiposConsulta, ...consultaData } = req.body;
+        const newConsulta = this.helpers.createConsulta(consultaData);
         const result = await this.db.addConsulta(newConsulta);
+
+        if (Array.isArray(tiposConsulta)) {
+            console.log("tiposConsulta = " + tiposConsulta)
+            await Promise.all(tiposConsulta.map(async (idtipoconsulta) => {
+                await this.db.addTipoxConsulta(newConsulta.idconsulta, idtipoconsulta);
+            }));
+        }
+
         res.json(result);
     }
 

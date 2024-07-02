@@ -20,12 +20,25 @@ export default class ConsultasDaoMysql extends Mysql {
         return result[0]
     }
 
+    async getNextConsultaId() {
+        const query = `SELECT MAX(idconsulta) + 1 as nextId FROM ${this.table}`;
+        const [result] = await this.connection.promise().query(query);
+        console.log("RESULTADO: ", result[0]);
+        return result[0].nextId;
+    }
+    
+
     async addConsulta(nuevoConsulta) {
         const { idconsulta, idusuario, consulta, fecha } = nuevoConsulta
         const query = `INSERT INTO ${this.table} ( idconsulta, idusuario, consulta, fecha) VALUES ('${idconsulta}',  '${idusuario}', '${consulta}', '${fecha}')`
         const result = await this.connection.promise().query(query)
         console.log(result)
         return result[0]
+    }
+
+    async addTipoxConsulta(idconsulta, idtipoconsulta) {
+        const query = 'INSERT INTO tipo_x_consulta (idconsulta, idtipoconsulta) VALUES (?, ?)';
+        await pool.query(query, [idconsulta, idtipoconsulta]);
     }
 
     async modifyConsulta(data) {
