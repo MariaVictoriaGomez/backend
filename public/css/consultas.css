@@ -195,7 +195,7 @@ ul#menu li a {
     align-items: center;
     justify-content: center;
     gap: 30px;
-   color: #C0AA83;
+    color: #C0AA83;
 }
 
 .login {
@@ -228,9 +228,9 @@ ul#menu li a {
 }
 
 
- #detalles {
+#detalles {
     width: 100%;
- 
+
 }
 
 .btnEnviarConsulta {
@@ -386,7 +386,7 @@ div.social-footer div {
     font-family: "Montserrat", sans-serif;
 }
 
-.tipos-consulta{
+.tipos-consulta {
     border-radius: 15px;
     padding: 1em;
     border: 2px solid #ccc;
@@ -396,11 +396,11 @@ div.social-footer div {
     text-transform: lowercase;
 }
 
-.tipos-consulta label{
+.tipos-consulta label {
     padding: 5px;
 }
 
-.mensaje{
+.mensaje {
     margin: 1em 0 1em 0;
     display: flex;
     flex-direction: column;
@@ -440,8 +440,8 @@ div.social-footer div {
         width: 90%;
     }
 
-    .section-inputs{
-      
+    .section-inputs {
+
         align-items: flex-end;
     }
 
@@ -463,3 +463,10 @@ div.social-footer div {
 
 
 
+.inputfecha {
+    border: none;
+    color: #5b5b5b;
+    outline: none;
+    width: 100%;
+    text-align: right;
+}
