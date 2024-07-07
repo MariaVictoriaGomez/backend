@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar sesión | Coffee Box</title>
+    <link rel="shortcut icon" href="../pages/assets/favicon_1.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+    <div class="directory">
+        <a href="../index.html">Inicio </a>
+        <p>/INICIAR SESIÓN</p>
+    </div>
+
+    <div class="login-box" >
+
+        <img class="avatar"  src="../pages/assets/imglogin/logo.ico" alt="logo tienda de cafe">
+    <h1>¡Bienvenido!</h1>
+
+    <form action="/users/user" method="GET"  id="formLogin" onsubmit="return validarFormulario()" >
+       <!--Username--> 
+       <label for="email">Email</label> 
+       <input type="text" placeholder ="Escribe tu usuario" name="email" id="email" required></input>
+    
+        <!--password-->    
+        <label for="contrasenia">Contraseña</label> 
+        <input type="password" placeholder ="Escribe tu contraseña" email="password" id="id" required></input>
+    
+
+        <input type="submit" value="Iniciar sesión">
+
+       <!-- <a href="#">Olvidaste tu contraseña</a> <br> -->
+        <a href="#">¿No tienes una cuenta?</a>
+        <a class="registro"  href="../pages/contacto.html">Regístrate.</a>
+    </form>
+    
+    </div>
+
+    
+</body>
+</html>

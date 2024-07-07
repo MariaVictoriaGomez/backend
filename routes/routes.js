@@ -1,10 +1,10 @@
-import {Router} from 'express';
+import { Router  } from "express";
 
-export default class Routes {
+export default class Routes{
 
     constructor(){
-
-        this.router = Router()
+        this.router = Router();
     }
-}
 
+
+}
